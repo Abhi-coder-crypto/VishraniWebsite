@@ -4,12 +4,10 @@ import { Users, History, Award, Cpu, Target, Heart, Rocket, CheckCircle, ArrowRi
 import { Link } from "wouter";
 
 const timeline = [
-  { year: "2000", title: "The Beginning", desc: "Founded with a vision to provide cost-effective IT solutions" },
-  { year: "2005", title: "Growth Phase", desc: "Expanded our services to include database consultancy" },
-  { year: "2010", title: "Digital Era", desc: "Transitioned to modern web technologies and cloud solutions" },
-  { year: "2015", title: "Enterprise Focus", desc: "Started serving large enterprise clients across industries" },
-  { year: "2020", title: "Two Decades", desc: "Celebrated 20 years of excellence and innovation" },
-  { year: "2024", title: "Future Ready", desc: "Continuing to evolve with cutting-edge technologies" },
+  { year: "2000", title: "Founded", desc: "Started with a vision for cost-effective IT solutions" },
+  { year: "2010", title: "Digital Era", desc: "Transitioned to modern technologies" },
+  { year: "2020", title: "Two Decades", desc: "20+ years of excellence" },
+  { year: "2024", title: "Future Ready", desc: "Evolving with cutting-edge tech" },
 ];
 
 const values = [
@@ -110,61 +108,46 @@ export default function KnowUs() {
         </div>
       </section>
 
-      {/* Story Section */}
-      <section className="py-12 md:py-16 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-blue-50/50 to-transparent" />
-        
-        <div className="container-main relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      {/* Story Section - Compact */}
+      <section className="py-10 md:py-12 bg-gradient-to-b from-slate-50 to-white">
+        <div className="container-main">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+            {/* Story Text - 3 columns */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              className="lg:col-span-3"
             >
-              <span className="inline-block bg-blue-100 text-blue-600 font-semibold text-sm uppercase tracking-wider px-4 py-2 rounded-full mb-6">Our Story</span>
-              <h2 className="text-3xl sm:text-4xl font-heading font-bold text-gray-900 mb-6">
+              <span className="inline-block bg-blue-100 text-blue-600 font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-4">Our Story</span>
+              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4">
                 A Legacy of Innovation & Trust
               </h2>
-              <div className="space-y-6 text-gray-600 leading-relaxed">
-                <p>
-                  Vishrani Computech was founded in 2000 with the aim of providing cost-effective IT solutions and services to customers with projects ranging from small to medium to large. Since its inception, we have been delivering full-cycle, end-to-end software development services.
-                </p>
-                <p>
-                  We assist companies in launching their projects, transitioning to digital-first strategies, and growing their businesses. Our mission is to empower clients to deliver enhanced experiences to their customers and employees, gain competitive advantages, and improve internal efficiency.
-                </p>
-                <p>
-                  We specialise in providing customised business software tailored to our clients' specific needs. Vishrani Computech offers a wide range of custom software development services, ensuring the delivery of the right solutions to meet our clients' unique requirements. We take pride in our customer loyalty and retention.
-                </p>
-              </div>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Founded in 2000, Vishrani Computech delivers full-cycle, end-to-end software development services. We specialise in customised business software, helping companies launch projects, transition to digital-first strategies, and grow their businesses.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                Our team of skilled professionals has evolved from DOS-based languages to modern Visual Studio .NET, providing solutions on MS SQL and Oracle databases. We take pride in our 95% client retention rate.
+              </p>
             </motion.div>
             
-            {/* Timeline */}
+            {/* Timeline - 2 columns, compact */}
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="relative"
+              className="lg:col-span-2"
             >
-              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-cyan-500 to-purple-500" />
-              <div className="space-y-8">
+              <div className="grid grid-cols-2 gap-3">
                 {timeline.map((item, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
-                    className="flex gap-6 items-start"
-                  >
-                    <div className="relative z-10 w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-lg shrink-0">
-                      <span className="text-white font-bold text-sm">{item.year}</span>
+                  <div key={idx} className="bg-white rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow text-center">
+                    <div className="w-10 h-10 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center mb-2">
+                      <span className="text-white font-bold text-xs">{item.year}</span>
                     </div>
-                    <div className="bg-white rounded-2xl p-5 shadow-lg flex-1 hover:shadow-xl transition-shadow">
-                      <h3 className="font-bold text-gray-900 mb-1">{item.title}</h3>
-                      <p className="text-gray-600 text-sm">{item.desc}</p>
-                    </div>
-                  </motion.div>
+                    <h3 className="font-bold text-gray-900 text-sm">{item.title}</h3>
+                    <p className="text-gray-500 text-xs">{item.desc}</p>
+                  </div>
                 ))}
               </div>
             </motion.div>
