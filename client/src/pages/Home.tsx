@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative h-[calc(100vh-80px)] mt-[72px] flex items-center overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -22,7 +22,7 @@ export default function Home() {
           <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
         </div>
 
-        <div className="container-main relative z-10 py-24 md:py-32">
+        <div className="container-main relative z-10 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
@@ -90,22 +90,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2"
-        >
-          <span className="text-white/50 text-sm">Scroll to explore</span>
-          <motion.div 
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-            className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2"
-          >
-            <div className="w-1.5 h-3 bg-white/50 rounded-full" />
-          </motion.div>
-        </motion.div>
       </section>
 
       {/* Stats - Mobile */}

@@ -27,15 +27,15 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/95 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-4"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-sm ${
+        scrolled ? "py-3" : "py-4"
       }`}
     >
       <div className="container-main flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
           <img src={logo} alt="Vishrani Computech" className="h-10 w-10 object-contain" />
-          <span className={`font-heading font-bold text-lg md:text-xl tracking-tight transition-colors ${scrolled ? "text-gray-900" : "text-white"}`}>
-            Vishrani <span className={`${scrolled ? "text-blue-600" : "text-cyan-400"}`}>Computech</span>
+          <span className="font-heading font-bold text-lg md:text-xl tracking-tight text-gray-900">
+            Vishrani <span className="text-blue-600">Computech</span>
           </span>
         </Link>
 
@@ -46,9 +46,7 @@ export default function Navbar() {
               key={link.href} 
               href={link.href}
               className={`text-sm font-medium transition-colors relative group ${
-                scrolled 
-                  ? (location === link.href ? "text-blue-600" : "text-gray-700 hover:text-blue-600")
-                  : (location === link.href ? "text-white" : "text-white/80 hover:text-white")
+                location === link.href ? "text-blue-600" : "text-gray-700 hover:text-blue-600"
               }`}
             >
               {link.label}
@@ -67,7 +65,7 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className={`md:hidden transition-colors ${scrolled ? "text-gray-900" : "text-white"}`}
+          className="md:hidden text-gray-900"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
