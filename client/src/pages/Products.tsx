@@ -39,33 +39,20 @@ const verticals = [
 export default function Products() {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="gradient-hero pt-32 pb-16 md:pt-40 md:pb-24">
+      {/* Solutions */}
+      <section className="pt-28 md:pt-32 pb-12 md:pb-16 bg-white">
         <div className="container-main">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl"
+            className="mb-10 md:mb-12"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white mb-6">
-              Our Products
-            </h1>
-            <p className="text-base sm:text-lg text-white/80 leading-relaxed">
-              We specialise in providing Customised Business Softwares for our clients. With more than two decades of experience, Vishrani Computech offers diverse custom software development services to develop and deliver the right software tailored to your business needs. Our diverse portfolio is a testimony of our technical capacity and customer satisfaction.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Solutions */}
-      <section className="section-padding bg-white">
-        <div className="container-main">
-          <div className="mb-10 md:mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900 mb-3">
+            <span className="inline-block bg-blue-100 text-blue-600 font-semibold text-sm uppercase tracking-wider px-4 py-2 rounded-full mb-4">Our Products</span>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-3">
               Solutions Designed & Developed
-            </h2>
-            <p className="text-gray-600">Some of the solutions designed and developed by us are</p>
-          </div>
+            </h1>
+            <p className="text-gray-600 max-w-2xl">We specialise in providing customised business software for our clients. Our diverse portfolio is a testimony of our technical capacity and customer satisfaction.</p>
+          </motion.div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {solutions.map((sol, idx) => (

@@ -83,25 +83,20 @@ export default function KnowUs() {
               transition={{ delay: 0.2 }}
               className="hidden lg:block"
             >
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-3xl blur-2xl" />
-                <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-                  <div className="grid grid-cols-2 gap-4">
-                    {expertise.map((item, idx) => (
-                      <motion.div
-                        key={idx}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 + idx * 0.1 }}
-                        className="bg-white/5 rounded-2xl p-4 hover:bg-white/10 transition-all"
-                      >
-                        <item.icon className="w-8 h-8 text-cyan-400 mb-3" />
-                        <h3 className="text-white font-semibold mb-1">{item.title}</h3>
-                        <p className="text-white/60 text-sm">{item.desc}</p>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
+              <div className="grid grid-cols-2 gap-4">
+                {expertise.map((item, idx) => (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 + idx * 0.1 }}
+                    className="bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all"
+                  >
+                    <item.icon className="w-8 h-8 text-blue-600 mb-3" />
+                    <h3 className="text-gray-900 font-semibold mb-1">{item.title}</h3>
+                    <p className="text-gray-600 text-sm">{item.desc}</p>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           </div>

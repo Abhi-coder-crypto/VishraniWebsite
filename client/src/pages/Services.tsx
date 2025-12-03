@@ -30,30 +30,23 @@ const services = [
 export default function Services() {
   return (
     <Layout>
-      {/* Hero - Compact */}
-      <section className="relative pt-20 pb-10 md:pt-24 md:pb-12 overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
-
-        <div className="container-main relative z-10">
+      {/* Services - Compact Cards */}
+      <section className="pt-28 md:pt-32 pb-12 md:pb-16 bg-gradient-to-b from-slate-50 to-white">
+        <div className="container-main">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center max-w-3xl mx-auto"
+            className="text-center mb-12"
           >
-            <span className="inline-block text-cyan-400 font-semibold text-sm uppercase tracking-wider mb-3">Our Services</span>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+            <span className="inline-block bg-blue-100 text-blue-600 font-semibold text-sm uppercase tracking-wider px-4 py-2 rounded-full mb-4">Our Services</span>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
               Expert Consultancy & Development Support
             </h1>
-            <p className="text-base text-white/80 leading-relaxed">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               We provide consultancy to in-house software and database development teams, offering a fresh perspective to enhance your systems and processes.
             </p>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Services - Compact Cards */}
-      <section className="py-16 md:py-20 bg-gradient-to-b from-slate-50 to-white">
-        <div className="container-main">
+          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {services.map((service, idx) => (
               <motion.div

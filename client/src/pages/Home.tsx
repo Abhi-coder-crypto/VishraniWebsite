@@ -79,11 +79,11 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 + idx * 0.1 }}
-                  className="bg-white/10 backdrop-blur-md rounded-xl p-5 text-center border border-white/20 hover:bg-white/15 transition-all hover:-translate-y-1"
+                  className="bg-white rounded-xl p-5 text-center shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
                 >
-                  <stat.icon className={`w-8 h-8 mx-auto mb-3 ${stat.color === 'cyan' ? 'text-cyan-400' : stat.color === 'blue' ? 'text-blue-400' : stat.color === 'purple' ? 'text-purple-400' : 'text-green-400'}`} />
-                  <div className="text-3xl font-bold text-white mb-1">{stat.number}</div>
-                  <div className="text-xs text-white/70">{stat.label}</div>
+                  <stat.icon className={`w-8 h-8 mx-auto mb-3 ${stat.color === 'cyan' ? 'text-cyan-500' : stat.color === 'blue' ? 'text-blue-500' : stat.color === 'purple' ? 'text-purple-500' : 'text-green-500'}`} />
+                  <div className={`text-3xl font-bold mb-1 ${stat.color === 'cyan' ? 'text-cyan-600' : stat.color === 'blue' ? 'text-blue-600' : stat.color === 'purple' ? 'text-purple-600' : 'text-green-600'}`}>{stat.number}</div>
+                  <div className="text-xs text-gray-600">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
@@ -93,18 +93,18 @@ export default function Home() {
       </section>
 
       {/* Stats - Mobile */}
-      <section className="lg:hidden bg-gradient-to-r from-blue-900 to-blue-800 py-10">
+      <section className="lg:hidden bg-gray-50 py-10">
         <div className="container-main">
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-4">
             {[
-              { number: "100+", label: "Clients Served" },
-              { number: "20+", label: "Years Experience" },
-              { number: "50+", label: "Solutions Built" },
-              { number: "95%", label: "Client Retention" },
+              { number: "100+", label: "Clients Served", color: "cyan" },
+              { number: "20+", label: "Years Experience", color: "blue" },
+              { number: "50+", label: "Solutions Built", color: "purple" },
+              { number: "95%", label: "Client Retention", color: "green" },
             ].map((stat, idx) => (
-              <div key={idx} className="text-center py-4 bg-white/5 rounded-xl backdrop-blur-sm">
-                <div className="text-3xl font-bold text-white mb-1">{stat.number}</div>
-                <div className="text-xs text-white/70">{stat.label}</div>
+              <div key={idx} className="text-center py-4 px-3 bg-white rounded-xl shadow-md">
+                <div className={`text-2xl font-bold mb-1 ${stat.color === 'cyan' ? 'text-cyan-600' : stat.color === 'blue' ? 'text-blue-600' : stat.color === 'purple' ? 'text-purple-600' : 'text-green-600'}`}>{stat.number}</div>
+                <div className="text-xs text-gray-600">{stat.label}</div>
               </div>
             ))}
           </div>
