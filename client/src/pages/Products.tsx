@@ -90,17 +90,15 @@ export default function Products() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="group bg-white border border-gray-200 rounded-xl p-5 md:p-6 hover:shadow-lg hover:border-gray-300 transition-all duration-300"
+                className="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:border-gray-300 transition-all duration-300"
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl overflow-hidden shrink-0 border border-gray-200 shadow-md bg-blue-50">
-                    <img src={sol.image} alt={sol.title} className="w-full h-full object-cover" />
-                  </div>
-                  <div>
-                    <h3 className="text-base md:text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
-                      {sol.title}
-                    </h3>
-                  </div>
+                <div className="w-full h-40 md:h-48 overflow-hidden bg-gradient-to-br from-blue-50 to-cyan-50">
+                  <img src={sol.image} alt={sol.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <div className="p-4 md:p-5">
+                  <h3 className="text-base md:text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                    {sol.title}
+                  </h3>
                 </div>
               </motion.div>
             ))}
