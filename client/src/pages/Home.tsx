@@ -112,56 +112,83 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-900 relative overflow-hidden">
+      <section className="py-20 md:py-28 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')]" />
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-100/50 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-100/50 rounded-full blur-3xl" />
         
         <div className="container-main relative z-10">
+          {/* Centered heading */}
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="inline-block bg-blue-100 text-blue-600 font-semibold text-sm uppercase tracking-wider px-4 py-2 rounded-full mb-6">About Us</span>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900">
+                Software is Critical for Every Organisation
+              </h2>
+            </motion.div>
+          </div>
+          
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="inline-block text-cyan-400 font-semibold text-sm uppercase tracking-wider mb-4">About Us</span>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">
-                Software is Critical for Every Organisation
-              </h2>
-              <p className="text-lg text-white/80 leading-relaxed mb-6">
+              <p className="text-lg text-gray-600 leading-relaxed mb-6">
                 Till the beginning of this century, software's use within organisations was largely confined to big transactional systems in the data centre. Now, it applies to nearly every function in every industry, touching every department. 
               </p>
-              <p className="text-lg text-white/80 leading-relaxed">
+              <p className="text-lg text-gray-600 leading-relaxed mb-8">
                 We empower our clients to deliver improved experiences to their customers and employees, gain competitive advantages and enhance internal efficiency.
               </p>
+              
+              {/* Stats row */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                {[
+                  { number: "25+", label: "Years" },
+                  { number: "100+", label: "Clients" },
+                  { number: "50+", label: "Projects" },
+                  { number: "95%", label: "Retention" },
+                ].map((stat, idx) => (
+                  <div key={idx} className="text-center p-4 bg-white rounded-xl shadow-md">
+                    <div className="text-2xl font-bold text-blue-600">{stat.number}</div>
+                    <div className="text-xs text-gray-500">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
             </motion.div>
             
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="grid grid-cols-2 gap-4"
+              className="relative"
             >
-              {[
-                { number: "25+", label: "Years of Excellence", icon: Award },
-                { number: "100+", label: "Happy Clients", icon: Users },
-                { number: "50+", label: "Projects Delivered", icon: Code },
-                { number: "95%", label: "Client Retention", icon: CheckCircle },
-              ].map((stat, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/15 transition-all"
-                >
-                  <stat.icon className="w-8 h-8 text-cyan-400 mb-3" />
-                  <div className="text-3xl font-bold text-white mb-1">{stat.number}</div>
-                  <div className="text-sm text-white/70">{stat.label}</div>
-                </motion.div>
-              ))}
+              {/* Decorative frame */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-3xl opacity-10 blur-lg" />
+              <div className="relative">
+                <div className="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-3xl p-1">
+                  <div className="bg-white rounded-[22px] p-6">
+                    <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center relative">
+                      {/* Abstract tech illustration */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10" />
+                      <div className="absolute top-8 left-8 w-20 h-20 bg-blue-500/20 rounded-2xl rotate-12" />
+                      <div className="absolute bottom-12 right-12 w-16 h-16 bg-cyan-500/20 rounded-full" />
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border-4 border-blue-500/20 rounded-3xl rotate-45" />
+                      <div className="relative z-10 text-center">
+                        <div className="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center shadow-xl">
+                          <Code className="w-12 h-12 text-white" />
+                        </div>
+                        <p className="text-blue-900 font-bold text-lg">Innovation Since 2000</p>
+                        <p className="text-blue-600 text-sm">Trusted Technology Partner</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
