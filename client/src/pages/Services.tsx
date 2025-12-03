@@ -2,6 +2,7 @@ import Layout from "@/components/layout/Layout";
 import { Terminal, Database, Search, CheckCircle, ArrowRight, Lightbulb, Settings, BarChart3, Code, Users, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import heroBg from "@assets/generated_images/professional_blue_tech_hero_background.png";
 
 const services = [
   {
@@ -30,19 +31,32 @@ const services = [
 export default function Services() {
   return (
     <Layout>
-      {/* Services - Compact Cards */}
-      <section className="pt-28 md:pt-32 pb-12 md:pb-16 bg-gradient-to-b from-slate-50 to-white">
-        <div className="container-main">
+      {/* Hero Section with Blue Background */}
+      <section className="relative pt-28 md:pt-32 pb-12 md:pb-16 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={heroBg} 
+            alt="Technology Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/95 via-blue-800/90 to-cyan-900/80" />
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
+        </div>
+        
+        <div className="container-main relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
           >
-            <span className="inline-block bg-blue-100 text-blue-600 font-semibold text-sm uppercase tracking-wider px-4 py-2 rounded-full mb-4">Our Services</span>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+            <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-4">
+              <span className="text-white/90 text-sm font-medium uppercase tracking-wider">Our Services</span>
+            </span>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-white mb-4">
               Expert Consultancy & Development Support
             </h1>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-white/80 max-w-2xl mx-auto">
               We provide consultancy to in-house software and database development teams, offering a fresh perspective to enhance your systems and processes.
             </p>
           </motion.div>
@@ -55,7 +69,7 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                className="group relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/20 hover:border-white/40 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
               >
                 {/* Top gradient bar */}
                 <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${service.gradient}`} />
@@ -65,11 +79,11 @@ export default function Services() {
                   <service.icon className="w-6 h-6 text-white" />
                 </div>
                 
-                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-lg font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">
                   {service.title}
                 </h3>
                 
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                <p className="text-white/70 text-sm leading-relaxed mb-4">
                   {service.description}
                 </p>
                 
@@ -78,9 +92,9 @@ export default function Services() {
                   {service.features.map((feature, fIdx) => (
                     <span 
                       key={fIdx} 
-                      className="inline-flex items-center gap-1 text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full"
+                      className="inline-flex items-center gap-1 text-xs bg-white/10 text-white/80 px-2 py-1 rounded-full"
                     >
-                      <CheckCircle className="w-3 h-3 text-green-500" />
+                      <CheckCircle className="w-3 h-3 text-cyan-400" />
                       {feature}
                     </span>
                   ))}

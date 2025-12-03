@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import { ArrowRight, Code, Database, Globe, CheckCircle, Users, Award, Zap, Shield, Clock } from "lucide-react";
 import heroBg from "@assets/generated_images/professional_blue_tech_hero_background.png";
+import heroIllustration from "@assets/generated_images/tech_hero_illustration.png";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 
@@ -61,29 +62,37 @@ export default function Home() {
               </div>
             </motion.div>
             
-            {/* Stats - Clean Counters */}
+            {/* Hero Image and Stats */}
             <motion.div 
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="hidden lg:flex flex-col justify-center"
             >
-              <div className="space-y-6">
+              <div className="relative mb-8">
+                <div className="absolute -inset-4 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-3xl blur-xl" />
+                <img 
+                  src={heroIllustration} 
+                  alt="Software Solutions" 
+                  className="relative w-full max-w-md mx-auto rounded-2xl shadow-2xl border border-white/10"
+                />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
                 {[
-                  { number: "100+", label: "Clients Served", delay: 0.3 },
-                  { number: "25+", label: "Years of Excellence", delay: 0.4 },
-                  { number: "50+", label: "Solutions Delivered", delay: 0.5 },
-                  { number: "95%", label: "Client Retention Rate", delay: 0.6 },
+                  { number: "100+", label: "Clients Served" },
+                  { number: "25+", label: "Years of Excellence" },
+                  { number: "50+", label: "Solutions Delivered" },
+                  { number: "95%", label: "Client Retention Rate" },
                 ].map((stat, idx) => (
                   <motion.div 
                     key={idx}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: stat.delay }}
-                    className="flex items-center gap-3"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 + idx * 0.1 }}
+                    className="bg-white/10 backdrop-blur-sm rounded-xl p-3 text-center border border-white/10"
                   >
-                    <span className="text-2xl md:text-3xl font-bold text-cyan-400">{stat.number}</span>
-                    <span className="text-white/70 text-sm">{stat.label}</span>
+                    <span className="text-xl md:text-2xl font-bold text-cyan-400 block">{stat.number}</span>
+                    <span className="text-white/70 text-xs">{stat.label}</span>
                   </motion.div>
                 ))}
               </div>
