@@ -66,7 +66,7 @@ export default function Products() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-10 md:mb-12"
+            className="mb-10 md:mb-12 text-center"
           >
             <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-4">
               <span className="text-white/90 text-sm font-medium uppercase tracking-wider">Our Products</span>
@@ -74,7 +74,7 @@ export default function Products() {
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-white mb-3">
               Solutions Designed & Developed
             </h1>
-            <p className="text-white/80 max-w-2xl">We specialise in providing customised business software for our clients. Our diverse portfolio is a testimony of our technical capacity and customer satisfaction.</p>
+            <p className="text-white/80 max-w-2xl mx-auto">We specialise in providing customised business software for our clients. Our diverse portfolio is a testimony of our technical capacity and customer satisfaction.</p>
           </motion.div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">

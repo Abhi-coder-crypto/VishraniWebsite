@@ -24,79 +24,81 @@ export default function Home() {
         </div>
 
         <div className="container-main relative z-10 py-8 md:py-12">
-          {/* Text Content - Centered */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto mb-8"
-          >
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-4">
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-              <span className="text-white/90 text-sm font-medium">Trusted Since 2000</span>
-            </div>
-            
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight mb-4">
-              Get Perfect <span className="text-cyan-400">Software Solutions</span> That Empowers Businesses
-            </h1>
-            
-            <p className="text-sm sm:text-base text-white/80 mb-6 leading-relaxed max-w-2xl mx-auto">
-              Since 2000, Vishrani Computech has been providing full-cycle, end-to-end software development services. We help companies launch their projects, switch to digital-first strategies, and grow their businesses.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link 
-                href="/connect" 
-                className="inline-flex items-center justify-center gap-2 bg-white text-blue-900 hover:bg-gray-100 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-sm font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
-                data-testid="link-hero-contact"
-              >
-                Start a Project <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link 
-                href="/products" 
-                className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white hover:bg-white/10 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-sm font-semibold transition-all"
-                data-testid="link-hero-products"
-              >
-                Our Solutions
-              </Link>
-            </div>
-          </motion.div>
-          
-          {/* Hero Image and Stats - Centered */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-xl mx-auto"
-          >
-            <div className="relative mb-4">
-              <div className="absolute -inset-4 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-3xl blur-xl" />
-              <img 
-                src={heroIllustration} 
-                alt="Software Solutions" 
-                className="relative w-full rounded-2xl shadow-2xl border border-white/10"
-              />
-            </div>
-            <div className="grid grid-cols-4 gap-2">
-              {[
-                { number: "100+", label: "Clients Served" },
-                { number: "25+", label: "Years of Excellence" },
-                { number: "50+", label: "Solutions Delivered" },
-                { number: "95%", label: "Client Retention" },
-              ].map((stat, idx) => (
-                <motion.div 
-                  key={idx}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 + idx * 0.1 }}
-                  className="bg-white/10 backdrop-blur-sm rounded-lg p-2 text-center border border-white/10"
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Left - Text Content */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center lg:text-left"
+            >
+              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-4">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                <span className="text-white/90 text-sm font-medium">Trusted Since 2000</span>
+              </div>
+              
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight mb-4">
+                Get Perfect <span className="text-cyan-400">Software Solutions</span> That Empowers Businesses
+              </h1>
+              
+              <p className="text-sm sm:text-base text-white/80 mb-6 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                Since 2000, Vishrani Computech has been providing full-cycle, end-to-end software development services. We help companies launch their projects, switch to digital-first strategies, and grow their businesses.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                <Link 
+                  href="/connect" 
+                  className="inline-flex items-center justify-center gap-2 bg-white text-blue-900 hover:bg-gray-100 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-sm font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                  data-testid="link-hero-contact"
                 >
-                  <span className="text-sm md:text-base font-bold text-cyan-400 block">{stat.number}</span>
-                  <span className="text-white/70 text-[10px] leading-tight block">{stat.label}</span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+                  Start a Project <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link 
+                  href="/products" 
+                  className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white hover:bg-white/10 px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-sm font-semibold transition-all"
+                  data-testid="link-hero-products"
+                >
+                  Our Solutions
+                </Link>
+              </div>
+            </motion.div>
+            
+            {/* Right - Hero Image and Stats */}
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="hidden lg:block"
+            >
+              <div className="relative mb-3 max-w-sm mx-auto">
+                <div className="absolute -inset-3 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl blur-xl" />
+                <img 
+                  src={heroIllustration} 
+                  alt="Software Solutions" 
+                  className="relative w-full rounded-xl shadow-2xl border border-white/10"
+                />
+              </div>
+              <div className="grid grid-cols-4 gap-2 max-w-sm mx-auto">
+                {[
+                  { number: "100+", label: "Clients" },
+                  { number: "25+", label: "Years" },
+                  { number: "50+", label: "Solutions" },
+                  { number: "95%", label: "Retention" },
+                ].map((stat, idx) => (
+                  <motion.div 
+                    key={idx}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 + idx * 0.1 }}
+                    className="bg-white/10 backdrop-blur-sm rounded-md p-1.5 text-center border border-white/10"
+                  >
+                    <span className="text-xs font-bold text-cyan-400 block">{stat.number}</span>
+                    <span className="text-white/70 text-[9px] leading-tight block">{stat.label}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
 
       </section>
