@@ -1,99 +1,137 @@
 import Layout from "@/components/layout/Layout";
 import { motion } from "framer-motion";
-import { Users, History, Award, Cpu } from "lucide-react";
+import { Users, History, Award, Cpu, Target, Heart } from "lucide-react";
 
 export default function KnowUs() {
   return (
     <Layout>
-      <div className="container mx-auto px-6 md:px-12 py-20">
-        
-        {/* Hero Section */}
-        <div className="text-center max-w-4xl mx-auto mb-20">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="inline-block p-3 rounded-full bg-primary/10 text-primary mb-6"
-          >
-            <History className="w-6 h-6" />
-          </motion.div>
-          <motion.h1 
+      {/* Hero */}
+      <section className="gradient-hero pt-32 pb-16 md:pt-40 md:pb-24">
+        <div className="container-main">
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-heading font-bold mb-8"
+            className="max-w-3xl"
           >
-            About <span className="text-gradient">Vishrani Computech</span>
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-lg md:text-xl text-muted-foreground leading-relaxed"
-          >
-            Vishrani Computech was founded in 2000 with the aim of providing cost-effective IT solutions and services to customers with projects ranging from small to medium to large.
-          </motion.p>
-        </div>
-
-        {/* Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-          <motion.div 
-            whileHover={{ y: -5 }}
-            className="glass-card p-8 rounded-2xl border-l-4 border-l-primary"
-          >
-            <Award className="w-10 h-10 text-primary mb-6" />
-            <h3 className="text-xl font-bold mb-3">Our Expertise</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              We specialise in providing customised business software tailored to our clients' specific needs. We ensure the delivery of the right solutions to meet unique requirements.
-            </p>
-          </motion.div>
-          
-          <motion.div 
-            whileHover={{ y: -5 }}
-            className="glass-card p-8 rounded-2xl border-l-4 border-l-accent"
-          >
-             <Users className="w-10 h-10 text-accent mb-6" />
-            <h3 className="text-xl font-bold mb-3">Customer Loyalty</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              We take pride in our customer loyalty and retention. Our clients stay with us because we deliver consistent value and support over decades.
-            </p>
-          </motion.div>
-
-          <motion.div 
-            whileHover={{ y: -5 }}
-            className="glass-card p-8 rounded-2xl border-l-4 border-l-purple-500"
-          >
-             <Cpu className="w-10 h-10 text-purple-500 mb-6" />
-            <h3 className="text-xl font-bold mb-3">Skilled Team</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Our team consists of highly skilled professionals. We are constantly upgrading our skills to match new technologies, progressing from DOS to the latest .NET stacks.
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white mb-6">
+              Know Us
+            </h1>
+            <p className="text-base sm:text-lg text-white/80 leading-relaxed">
+              Get to know the team and vision behind Vishrani Computech.
             </p>
           </motion.div>
         </div>
+      </section>
 
-        {/* History/Tech Stack Section */}
-        <div className="bg-white/5 rounded-3xl p-8 md:p-16 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/10 blur-[100px] rounded-full" />
-          
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-             <div>
-               <h2 className="text-3xl font-heading font-bold mb-6">Evolution of Technology</h2>
-               <p className="text-muted-foreground mb-6 leading-relaxed">
-                 We have witnessed and adapted to the entire evolution of the modern software industry. From the early days of DOS-based languages to Visual Basic 6, and now to the latest Visual Studio .NET ecosystems.
-               </p>
-               <p className="text-muted-foreground leading-relaxed">
-                 We work extensively on SQL & Oracle databases, ensuring robust data management for enterprise-grade applications.
-               </p>
-             </div>
-             <div className="grid grid-cols-2 gap-4">
-               {["Visual Studio .NET", "SQL Server", "Oracle", "Cloud Architecture", "Modern Web", "Enterprise Security"].map((tech, i) => (
-                 <div key={i} className="bg-black/40 p-4 rounded-xl border border-white/10 text-center text-sm font-medium text-white/80">
-                   {tech}
-                 </div>
-               ))}
-             </div>
+      {/* Story */}
+      <section className="section-padding bg-white">
+        <div className="container-main">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center">
+                  <History className="w-6 h-6 text-blue-600" />
+                </div>
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900">Our Story</h2>
+              </div>
+              <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6">
+                Vishrani Computech was founded in 2000 with the aim of providing cost-effective IT solutions and services to customers with projects ranging from small to medium to large.
+              </p>
+              <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
+                We specialise in providing customised business software tailored to our clients' specific needs. Vishrani Computech offers a wide range of custom software development services, ensuring the delivery of the right solutions to meet our clients' unique requirements.
+              </p>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Values */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-main">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl p-6 md:p-8 card-shadow"
+            >
+              <Award className="w-10 h-10 text-blue-600 mb-4" />
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">Our Expertise</h3>
+              <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                We specialise in providing customised business software tailored to our clients' specific needs. We ensure the delivery of the right solutions to meet unique requirements.
+              </p>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white rounded-xl p-6 md:p-8 card-shadow"
+            >
+              <Heart className="w-10 h-10 text-blue-600 mb-4" />
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">Customer Loyalty</h3>
+              <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                We take pride in our customer loyalty and retention. Our clients stay with us because we deliver consistent value and support over decades.
+              </p>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-white rounded-xl p-6 md:p-8 card-shadow"
+            >
+              <Cpu className="w-10 h-10 text-blue-600 mb-4" />
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">Skilled Team</h3>
+              <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                Our team consists of highly skilled professionals constantly upgrading skills to match new technologies, from DOS to the latest .NET stacks.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Stack */}
+      <section className="section-padding bg-white">
+        <div className="container-main">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-10"
+            >
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900 mb-4">
+                Our Technology Evolution
+              </h2>
+              <p className="text-gray-600 text-base sm:text-lg">
+                We have progressed from DOS based languages to Visual Basic 6 to latest Visual Studio .NET. We work on SQL & Oracle databases.
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
+              {["Visual Studio .NET", "SQL Server", "Oracle", "Cloud Architecture", "Modern Web", "Enterprise Security"].map((tech, i) => (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="bg-gray-100 p-4 rounded-lg text-center text-sm font-medium text-gray-700"
+                >
+                  {tech}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 }

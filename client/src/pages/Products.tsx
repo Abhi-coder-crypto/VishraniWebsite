@@ -1,33 +1,30 @@
 import Layout from "@/components/layout/Layout";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { 
-  Briefcase, 
+  TrendingUp, 
   Scissors, 
   GraduationCap, 
   BookOpen, 
   Film, 
   Warehouse, 
-  TrendingUp, 
+  Briefcase, 
   ShoppingCart, 
-  FileText, 
-  CheckCircle2,
-  Building2,
+  FileText,
   Factory,
-  Truck
+  Truck,
+  BarChart3
 } from "lucide-react";
 import { motion } from "framer-motion";
 
 const solutions = [
-  { icon: TrendingUp, title: "Back-office for Stock Broker", desc: "Comprehensive management for trading and equity." },
-  { icon: Scissors, title: "Back-office for Handkerchief Manufacturer", desc: "Production tracking and inventory control." },
-  { icon: GraduationCap, title: "Students Performance Tracking", desc: "Analytics and progress reports for education." },
-  { icon: BookOpen, title: "Question Bank for Coaching Institutes", desc: "Digital repository and exam generation." },
-  { icon: Film, title: "Resource Management for Studios", desc: "Scheduling and asset tracking for post-production." },
-  { icon: Warehouse, title: "Warehouse Management System", desc: "Logistics, stock, and dispatch efficiency." },
-  { icon: Briefcase, title: "Back-office for Finance Broker", desc: "Client portfolio and transaction management." },
-  { icon: ShoppingCart, title: "GST Invoicing for Trader", desc: "Compliant billing and tax reporting." },
-  { icon: FileText, title: "Task Management for Insurance", desc: "Lead tracking and policy workflow." },
+  { icon: TrendingUp, title: "Back-office for Stock Broker" },
+  { icon: Scissors, title: "Back-office for Handkerchief Manufacturer" },
+  { icon: GraduationCap, title: "Students Performance Tracking" },
+  { icon: BookOpen, title: "Question Bank for Coaching Institutes" },
+  { icon: Film, title: "Resource Management for Post Production Studios" },
+  { icon: Warehouse, title: "Warehouse Management System" },
+  { icon: Briefcase, title: "Back-office for Finance Broker" },
+  { icon: ShoppingCart, title: "GST Invoicing for Trader / Shop keeper" },
+  { icon: FileText, title: "Task Management for Insurance Agent" },
 ];
 
 const verticals = [
@@ -42,35 +39,35 @@ const verticals = [
 export default function Products() {
   return (
     <Layout>
-      <div className="container mx-auto px-6 md:px-12 py-20">
-        {/* Header */}
-        <div className="max-w-3xl mb-20">
-          <motion.h1 
+      {/* Hero */}
+      <section className="gradient-hero pt-32 pb-16 md:pt-40 md:pb-24">
+        <div className="container-main">
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-heading font-bold mb-6"
+            className="max-w-3xl"
           >
-            Our <span className="text-gradient">Products</span>
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-muted-foreground leading-relaxed"
-          >
-            We specialise in providing Customised Business Softwares for our clients. With more than two decades of experience, 
-            Vishrani Computech offers diverse custom software development services tailored to your business needs. 
-            Our diverse portfolio is a testimony of our technical capacity and customer satisfaction.
-          </motion.p>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-white mb-6">
+              Our Products
+            </h1>
+            <p className="text-base sm:text-lg text-white/80 leading-relaxed">
+              We specialise in providing Customised Business Softwares for our clients. With more than two decades of experience, Vishrani Computech offers diverse custom software development services to develop and deliver the right software tailored to your business needs. Our diverse portfolio is a testimony of our technical capacity and customer satisfaction.
+            </p>
+          </motion.div>
         </div>
+      </section>
 
-        {/* Solutions Grid */}
-        <div className="mb-24">
-          <h2 className="text-2xl font-heading font-bold mb-10 flex items-center gap-3">
-            <div className="h-1 w-10 bg-primary rounded-full"></div>
-            Solutions Designed
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Solutions */}
+      <section className="section-padding bg-white">
+        <div className="container-main">
+          <div className="mb-10 md:mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900 mb-3">
+              Solutions Designed & Developed
+            </h2>
+            <p className="text-gray-600">Some of the solutions designed and developed by us are</p>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {solutions.map((sol, idx) => (
               <motion.div
                 key={idx}
@@ -78,49 +75,53 @@ export default function Products() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
+                className="group bg-white border border-gray-200 rounded-xl p-5 md:p-6 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
               >
-                <Card className="glass-card border-white/5 hover:border-primary/50 transition-colors h-full group overflow-hidden relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <CardHeader>
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                      <sol.icon className="w-6 h-6" />
-                    </div>
-                    <CardTitle className="text-xl group-hover:text-primary transition-colors">{sol.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground text-sm">{sol.desc}</p>
-                  </CardContent>
-                </Card>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-blue-100 flex items-center justify-center shrink-0 group-hover:bg-blue-600 transition-colors">
+                    <sol.icon className="w-5 h-5 md:w-6 md:h-6 text-blue-600 group-hover:text-white transition-colors" />
+                  </div>
+                  <div>
+                    <h3 className="text-base md:text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      {sol.title}
+                    </h3>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
+      </section>
 
-        {/* Verticals Grid */}
-        <div>
-          <h2 className="text-2xl font-heading font-bold mb-10 flex items-center gap-3">
-            <div className="h-1 w-10 bg-accent rounded-full"></div>
-            Verticals Catered To
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      {/* Verticals */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-main">
+          <div className="mb-10 md:mb-12">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900 mb-3">
+              Verticals We Cater To
+            </h2>
+            <p className="text-gray-600">Some of the verticals that we cater to are</p>
+          </div>
+          
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             {verticals.map((ver, idx) => (
-               <motion.div
+              <motion.div
                 key={idx}
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="glass-card p-6 rounded-xl flex flex-col items-center justify-center text-center gap-4 hover:bg-white/5 transition-colors border-white/5 hover:border-accent/50 cursor-default"
+                className="bg-white rounded-xl p-4 md:p-6 text-center border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all"
               >
-                <div className="p-3 rounded-full bg-accent/10 text-accent">
-                  <ver.icon className="w-6 h-6" />
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-3">
+                  <ver.icon className="w-5 h-5 md:w-6 md:h-6 text-blue-600" />
                 </div>
-                <span className="font-medium text-sm">{ver.title}</span>
+                <span className="font-medium text-gray-900 text-xs sm:text-sm">{ver.title}</span>
               </motion.div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
     </Layout>
   );
 }
