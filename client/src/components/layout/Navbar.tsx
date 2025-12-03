@@ -15,7 +15,13 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [location] = useLocation();
+  const [location, setLocation] = useLocation();
+
+  const handleHover = (href: string) => {
+    if (location !== href) {
+      setLocation(href);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,6 +51,7 @@ export default function Navbar() {
             <Link 
               key={link.href} 
               href={link.href}
+              onMouseEnter={() => handleHover(link.href)}
               className={`text-sm font-medium transition-colors relative group ${
                 location === link.href ? "text-blue-600" : "text-gray-700 hover:text-blue-600"
               }`}
@@ -57,6 +64,7 @@ export default function Navbar() {
           ))}
           <Link 
             href="/connect" 
+            onMouseEnter={() => handleHover("/connect")}
             className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors"
           >
             Get Started
