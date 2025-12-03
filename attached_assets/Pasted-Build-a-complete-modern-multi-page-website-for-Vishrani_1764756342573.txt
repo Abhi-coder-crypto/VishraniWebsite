@@ -1,0 +1,136 @@
+Build a complete modern multi-page website for Vishrani Computech with beautiful UI, animations, and responsive layout. Use HTML, CSS, JavaScript for frontend and PHP for contact form email handling.
+
+The website must include:
+
+Home
+
+Products
+
+Services
+
+Know Us
+
+Connect (with working PHP email form)
+
+Navigation menu (visible on all pages):
+Home | Products | Services | Know Us | Connect
+
+PAGE CONTENT & REQUIREMENTS
+🏠 Home Page
+
+Left = hero text, Right = image.
+Hero content:
+
+"Get Perfect Software Solutions That Empowers Businesses.
+
+Since 2000, Vishrani Computech has been providing full-cycle, end-to-end software development services. We help companies launch their projects, switch to digital-first strategies, and grow their businesses. Software is critical for almost every organisation’s performance. Till the beginning of this century, software’s use within organisations was largely confined to big transactional systems in the data centre. Now, it applies to nearly every function in every industry, touching every department. We empower our clients to deliver improved experiences to their customers and employees, gain competitive advantages and enhance internal efficiency."
+
+Use premium layout, smooth fade animations, glassmorphism card effects.
+
+🛠 Products Page
+
+Heading: Products
+
+Intro paragraph:
+"We specialise in providing Customised Business Softwares for our clients. With more than two decades of experience, Vishrani Computech offers diverse custom software development services to develop and deliver the right software tailored to your business needs. Our diverse portfolio is a testimony of our technical capacity and customer satisfaction."
+
+Show the following as a grid of modern cards with icons:
+
+Solutions Designed
+
+Back-office for Stock Broker
+
+Back-office for Handkerchief Manufacturer
+
+Students Performance Tracking
+
+Question Bank for Coaching Institutes
+
+Resource Management for Post Production Studios
+
+Warehouse Management System
+
+Back-office for Finance Broker
+
+GST Invoicing for Trader / Shop keeper
+
+Task Management for Insurance Agent
+
+Verticals Catered To (second grid section)
+
+Stock Market
+
+Finance Broker
+
+Coaching Institute
+
+Post Production Studio
+
+Garment Manufacturing
+
+Logistics & Warehouse
+
+🔧 Services Page
+
+Content to display with feature-style blocks:
+
+"We provide consultancy to In-house software / database development teams. While your in-house team may be in the best position to know the user requirement, we provide a Third Person view on the overall process and provide inputs to enhance the system.
+
+For those looking to implement new system or upgrade existing systems, we can analyse existing software / system and do gap analysis vis a vis the requirements in the modern environment.
+
+We also provide database consultancy for enhancing the performance of existing system."
+
+📘 Know Us Page
+
+Use timeline or section cards to make visually premium.
+
+"Vishrani Computech was founded in 2000 with the aim of providing cost-effective IT solutions and services to customers with projects ranging from small to medium to large.
+
+We specialise in providing customised business software tailored to our clients' specific needs. Vishrani Computech offers a wide range of custom software development services, ensuring the delivery of the right solutions to meet our clients' unique requirements.
+
+We take pride in our customer loyalty and retention.
+
+Our team consists of highly skilled and experienced professionals. We are constantly upgrading our skills to match the new technologies in software field. We have progressed from DOS based languages to Visual Basic 6 to latest Visual Studio .NET. We work on SQL & Oracle databases."
+
+📩 Connect Page (FORM REQUIRED)
+
+Create a stylish contact form with fields:
+
+Name
+
+Email
+
+Message
+
+Submit
+
+On form submit -> use PHP mail() or SMTP to send email to:
+
+support@vishrani.com
+
+Display confirmation message after sending.
+
+Also show business contact details:
+
+Location
+Address: 83 L. L. Shah Marg, Dana Bunder, Masjid (E), Mumbai 400 009, India
+Email: support@vishrani.com
+
+FOOTER (ALL PAGES)
+Location
+83 L. L. Shah Marg,
+Dana Bunder, Masjid (E),
+Mumbai 400 009, India
+
+Email: support@vishrani.com
+
+Links:
+Home | Products | Services | Know Us | Connect
+
+UI DESIGN REQUIREMENTS
+
+✔ Modern premium UI (client should be shocked)
+✔ Animations, smooth scrolling
+✔ Responsive layout for all devices
+✔ Professional gradients + hover effects
+✔ Clean fonts, lots of spacing
