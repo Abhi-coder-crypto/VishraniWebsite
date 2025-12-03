@@ -39,10 +39,16 @@ export default function KnowUs() {
                 <h2 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900">Our Story</h2>
               </div>
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6">
-                Vishrani Computech was founded in 2000 with the aim of providing cost-effective IT solutions and services to customers with projects ranging from small to medium to large.
+                Vishrani Computech was founded in 2000 with the aim of providing cost-effective IT solutions and services to customers with projects ranging from small to medium to large. Since its inception, Vishrani Computech has been delivering full-cycle, end-to-end software development services. We assist companies in launching their projects, transitioning to digital-first strategies, and growing their businesses. Our mission is to empower clients to deliver enhanced experiences to their customers and employees, gain competitive advantages, and improve internal efficiency.
+              </p>
+              <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6">
+                We specialise in providing customised business software tailored to our clients' specific needs. Vishrani Computech offers a wide range of custom software development services, ensuring the delivery of the right solutions to meet our clients' unique requirements. We take pride in our customer loyalty and retention.
+              </p>
+              <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-6">
+                In addition to software development, we provide consultancy services to in-house software and database development teams. For those looking to implement new systems or upgrade existing ones, we conduct thorough analyses and gap assessments to ensure modern requirements are met. Our database consultancy services focus on enhancing the performance of existing systems.
               </p>
               <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                We specialise in providing customised business software tailored to our clients' specific needs. Vishrani Computech offers a wide range of custom software development services, ensuring the delivery of the right solutions to meet our clients' unique requirements.
+                Our team consists of highly skilled and experienced professionals. We are constantly upgrading our skills to match the new technologies in software field. We have progressed from DOS based languages like Clipper and Foxpro to Windows based Visual Basic 6 to currently the latest version of Visual Studio Dot Net. On the database front, we are providing solution on robust databases like Ms Sql and Oracle.
               </p>
             </motion.div>
           </div>

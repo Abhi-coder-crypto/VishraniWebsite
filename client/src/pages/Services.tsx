@@ -38,7 +38,7 @@ export default function Services() {
               Our Services
             </h1>
             <p className="text-base sm:text-lg text-white/80 leading-relaxed">
-              We don't just build software; we partner with you to optimize your entire digital ecosystem with expert consultancy and development support.
+              We provide consultancy to In-house software / database development teams. While your in-house team may be in the best position to know the user requirement, we provide a Third Person view on the overall process and provide inputs to enhance the system. For those looking to implement new system or upgrade existing systems, we can analyse existing software / system and do gap analysis vis a vis the requirements in the modern environment. We also provide database consultancy for enhancing the performance of existing system.
             </p>
           </motion.div>
         </div>
