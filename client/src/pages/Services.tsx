@@ -1,8 +1,11 @@
 import Layout from "@/components/layout/Layout";
-import { Terminal, Database, Search, CheckCircle, ArrowRight, Lightbulb, Settings, BarChart3, Code, Users, Zap } from "lucide-react";
+import { Terminal, Database, Search, CheckCircle, ArrowRight, BarChart3, Zap, Lightbulb } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import heroBg from "@assets/generated_images/professional_blue_tech_hero_background.png";
+import strategicIcon from "@assets/generated_images/strategic_it_consulting_icon.png";
+import integrationIcon from "@assets/generated_images/system_integration_icon.png";
+import analyticsIcon from "@assets/generated_images/performance_analytics_icon.png";
 
 const services = [
   {
@@ -131,21 +134,21 @@ export default function Services() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { 
-                icon: Lightbulb, 
+                image: strategicIcon, 
                 title: "Strategic IT Consulting", 
                 desc: "Expert guidance on technology decisions and digital strategy to align your IT with business goals",
                 gradient: "from-amber-500 to-orange-500",
                 features: ["Technology Roadmap", "Digital Strategy", "IT Governance"]
               },
               { 
-                icon: Settings, 
+                image: integrationIcon, 
                 title: "System Integration", 
                 desc: "Seamlessly connect your applications and data sources for unified operations",
                 gradient: "from-blue-500 to-indigo-500",
                 features: ["API Integration", "Data Sync", "Workflow Automation"]
               },
               { 
-                icon: BarChart3, 
+                image: analyticsIcon, 
                 title: "Performance Analytics", 
                 desc: "Measure and improve your software system performance with data-driven insights",
                 gradient: "from-emerald-500 to-teal-500",
@@ -162,9 +165,9 @@ export default function Services() {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/0 rounded-3xl blur-xl group-hover:from-white/10 transition-all" />
                 <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl p-6 border border-white/10 hover:border-white/20 transition-all h-full">
-                  {/* Icon */}
-                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform`}>
-                    <item.icon className="w-7 h-7 text-white" />
+                  {/* Image */}
+                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-transform overflow-hidden p-2`}>
+                    <img src={item.image} alt={item.title} className="w-full h-full object-contain" />
                   </div>
                   
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">{item.title}</h3>

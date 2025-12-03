@@ -1,18 +1,4 @@
 import Layout from "@/components/layout/Layout";
-import { 
-  TrendingUp, 
-  Scissors, 
-  GraduationCap, 
-  BookOpen, 
-  Film, 
-  Warehouse, 
-  Briefcase, 
-  ShoppingCart, 
-  FileText,
-  Factory,
-  Truck,
-  BarChart3
-} from "lucide-react";
 import { motion } from "framer-motion";
 import heroBg from "@assets/generated_images/professional_blue_tech_hero_background.png";
 import stockBrokerImg from "@assets/generated_images/stock_broker_backoffice_software.png";
@@ -24,6 +10,12 @@ import warehouseImg from "@assets/generated_images/warehouse_management_system.p
 import financeBrokerImg from "@assets/generated_images/finance_broker_backoffice.png";
 import gstInvoicingImg from "@assets/generated_images/gst_invoicing_software.png";
 import insuranceImg from "@assets/generated_images/insurance_agent_task_management.png";
+import stockMarketIcon from "@assets/generated_images/stock_market_trading_icon.png";
+import financeBrokerIcon from "@assets/generated_images/finance_broker_icon.png";
+import coachingIcon from "@assets/generated_images/coaching_institute_icon.png";
+import postProductionIcon from "@assets/generated_images/post_production_studio_icon.png";
+import garmentIcon from "@assets/generated_images/garment_manufacturing_icon.png";
+import logisticsIcon from "@assets/generated_images/logistics_warehouse_icon.png";
 
 const solutions = [
   { image: stockBrokerImg, title: "Back-office for Stock Broker" },
@@ -38,12 +30,12 @@ const solutions = [
 ];
 
 const verticals = [
-  { icon: TrendingUp, title: "Stock Market" },
-  { icon: Briefcase, title: "Finance Broker" },
-  { icon: GraduationCap, title: "Coaching Institute" },
-  { icon: Film, title: "Post Production Studio" },
-  { icon: Factory, title: "Garment Manufacturing" },
-  { icon: Truck, title: "Logistics & Warehouse" },
+  { image: stockMarketIcon, title: "Stock Market" },
+  { image: financeBrokerIcon, title: "Finance Broker" },
+  { image: coachingIcon, title: "Coaching Institute" },
+  { image: postProductionIcon, title: "Post Production Studio" },
+  { image: garmentIcon, title: "Garment Manufacturing" },
+  { image: logisticsIcon, title: "Logistics & Warehouse" },
 ];
 
 export default function Products() {
@@ -90,15 +82,17 @@ export default function Products() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg hover:border-gray-300 transition-all duration-300"
+                className="group bg-white border border-gray-200 rounded-xl p-5 md:p-6 hover:shadow-lg hover:border-blue-300 transition-all duration-300"
               >
-                <div className="w-full h-40 md:h-48 overflow-hidden bg-gradient-to-br from-blue-50 to-cyan-50">
-                  <img src={sol.image} alt={sol.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                </div>
-                <div className="p-4 md:p-5">
-                  <h3 className="text-base md:text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
-                    {sol.title}
-                  </h3>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl overflow-hidden shrink-0 border-2 border-blue-200 shadow-sm bg-blue-50 p-1">
+                    <img src={sol.image} alt={sol.title} className="w-full h-full object-contain rounded-lg" />
+                  </div>
+                  <div>
+                    <h3 className="text-base md:text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      {sol.title}
+                    </h3>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -126,8 +120,8 @@ export default function Products() {
                 transition={{ delay: idx * 0.05 }}
                 className="bg-white rounded-xl p-4 md:p-6 text-center border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all"
               >
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-3">
-                  <ver.icon className="w-5 h-5 md:w-6 md:h-6 text-blue-600" />
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-blue-50 flex items-center justify-center mx-auto mb-3 overflow-hidden border border-blue-100">
+                  <img src={ver.image} alt={ver.title} className="w-8 h-8 md:w-10 md:h-10 object-contain" />
                 </div>
                 <span className="font-medium text-gray-900 text-xs sm:text-sm">{ver.title}</span>
               </motion.div>
