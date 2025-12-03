@@ -38,11 +38,16 @@ export default function Navbar() {
       }`}
     >
       <div className="container-main flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <img src={logo} alt="Vishrani Computech" className="h-10 w-10 object-contain" />
-          <span className="font-heading font-bold text-lg md:text-xl tracking-tight text-gray-900">
-            Vishrani <span className="text-blue-600">Computech</span>
-          </span>
+        <Link href="/" className="flex items-center gap-3 group">
+          <img src={logo} alt="Vishrani Computech" className="h-11 w-11 object-contain" />
+          <div className="flex flex-col">
+            <span className="font-heading font-extrabold text-xl md:text-2xl tracking-tight leading-none">
+              <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">Vishrani</span>
+            </span>
+            <span className="font-heading font-bold text-sm md:text-base tracking-widest uppercase bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+              Computech
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
@@ -62,13 +67,6 @@ export default function Navbar() {
               }`} />
             </Link>
           ))}
-          <Link 
-            href="/connect" 
-            onMouseEnter={() => handleHover("/connect")}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors"
-          >
-            Get Started
-          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -105,13 +103,6 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Link 
-                href="/connect" 
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg text-base font-medium transition-colors text-center mt-2"
-                onClick={() => setIsOpen(false)}
-              >
-                Get Started
-              </Link>
             </div>
           </motion.div>
         )}
