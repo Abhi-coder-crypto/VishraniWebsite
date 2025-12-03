@@ -80,10 +80,10 @@ export default function Home() {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: stat.delay }}
-                    className="flex items-center gap-4"
+                    className="flex items-center gap-3"
                   >
-                    <span className="text-4xl md:text-5xl font-bold text-white">{stat.number}</span>
-                    <span className="text-white/70 text-sm uppercase tracking-wider">{stat.label}</span>
+                    <span className="text-2xl md:text-3xl font-bold text-cyan-400">{stat.number}</span>
+                    <span className="text-white/70 text-sm">{stat.label}</span>
                   </motion.div>
                 ))}
               </div>
