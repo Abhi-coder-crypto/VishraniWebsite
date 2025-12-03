@@ -12,7 +12,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <img src={logo} alt="Vishrani Computech" className="h-8 w-8 object-contain" />
               <span className="font-heading font-bold text-lg text-white">
-                Vishrani<span className="text-blue-400">Computech</span>
+                Vishrani <span className="text-cyan-400">Computech</span>
               </span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">

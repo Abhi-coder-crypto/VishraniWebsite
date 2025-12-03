@@ -35,7 +35,7 @@ export default function Navbar() {
         <Link href="/" className="flex items-center gap-2 group">
           <img src={logo} alt="Vishrani Computech" className="h-10 w-10 object-contain" />
           <span className={`font-heading font-bold text-lg md:text-xl tracking-tight transition-colors ${scrolled ? "text-gray-900" : "text-white"}`}>
-            Vishrani<span className="text-blue-600">Computech</span>
+            Vishrani <span className={`${scrolled ? "text-blue-600" : "text-cyan-400"}`}>Computech</span>
           </span>
         </Link>
 

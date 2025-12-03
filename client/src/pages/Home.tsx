@@ -1,5 +1,5 @@
 import Layout from "@/components/layout/Layout";
-import { ArrowRight, Code, Database, Globe, CheckCircle, Users, Award, Clock } from "lucide-react";
+import { ArrowRight, Code, Database, Globe, CheckCircle, Users, Award } from "lucide-react";
 import heroBg from "@assets/generated_images/professional_blue_tech_hero_background.png";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -27,32 +27,25 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="text-center lg:text-left"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white/90 text-sm font-medium mb-6">
-                <Clock className="w-4 h-4" />
-                Serving Since 2000
-              </div>
-              
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6">
-                Get Perfect{" "}
-                <span className="text-cyan-400">Software Solutions</span>{" "}
-                That Empowers Businesses
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight mb-4">
+                Get Perfect <span className="text-cyan-400">Software Solutions</span> That Empowers Businesses
               </h1>
               
-              <p className="text-base sm:text-lg text-white/80 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
+              <p className="text-sm sm:text-base text-white/80 mb-6 leading-relaxed max-w-lg mx-auto lg:mx-0">
                 Since 2000, Vishrani Computech has been providing full-cycle, end-to-end software development services. We help companies launch their projects, switch to digital-first strategies, and grow their businesses.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                 <Link 
                   href="/connect" 
-                  className="inline-flex items-center justify-center gap-2 bg-white text-blue-900 hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base font-semibold transition-colors"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-blue-900 hover:bg-gray-100 px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg text-sm font-semibold transition-colors"
                   data-testid="link-hero-contact"
                 >
-                  Start a Project <ArrowRight className="w-5 h-5" />
+                  Start a Project <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link 
                   href="/products" 
-                  className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white hover:bg-white/10 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base font-semibold transition-colors"
+                  className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white hover:bg-white/10 px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg text-sm font-semibold transition-colors"
                   data-testid="link-hero-products"
                 >
                   Our Solutions
@@ -104,7 +97,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-gradient-to-b from-blue-50 to-white">
         <div className="container-main">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -127,7 +120,7 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-gradient-to-b from-white to-blue-50">
         <div className="container-main">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mb-4">Why Choose Us</h2>
