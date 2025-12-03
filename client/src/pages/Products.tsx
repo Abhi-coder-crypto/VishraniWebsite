@@ -49,23 +49,39 @@ const verticals = [
 export default function Products() {
   return (
     <Layout>
-      {/* Hero Section with White Background */}
-      <section className="relative pt-28 md:pt-32 pb-12 md:pb-16 overflow-hidden bg-white">
+      {/* Hero Header Section with Blue Gradient */}
+      <section className="relative pt-32 md:pt-40 pb-16 md:pb-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={heroBg} 
+            alt="Technology Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/95 via-blue-800/90 to-cyan-900/80" />
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
+        </div>
+        
         <div className="container-main relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-10 md:mb-12 text-center"
+            className="text-center"
           >
-            <span className="inline-flex items-center gap-2 bg-blue-100 border border-blue-200 rounded-full px-4 py-2 mb-4">
-              <span className="text-blue-600 text-sm font-medium uppercase tracking-wider">Our Products</span>
+            <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-4">
+              <span className="text-white/90 text-sm font-medium uppercase tracking-wider">Our Products</span>
             </span>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-3">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-white mb-3">
               Solutions Designed & Developed
             </h1>
-            <p className="text-gray-600 max-w-2xl mx-auto">We specialise in providing customised business software for our clients. Our diverse portfolio is a testimony of our technical capacity and customer satisfaction.</p>
+            <p className="text-white/80 max-w-2xl mx-auto">We specialise in providing customised business software for our clients. Our diverse portfolio is a testimony of our technical capacity and customer satisfaction.</p>
           </motion.div>
-          
+        </div>
+      </section>
+
+      {/* Products Cards Section with White Background */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="container-main">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {solutions.map((sol, idx) => (
               <motion.div
