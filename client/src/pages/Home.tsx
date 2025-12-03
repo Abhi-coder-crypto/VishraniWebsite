@@ -42,15 +42,11 @@ export default function Home() {
               We help companies launch projects, switch to digital-first strategies, and grow their businesses.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link href="/connect">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 h-12 text-base shadow-lg shadow-primary/25">
-                  Start a Project <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+              <Link href="/connect" className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white rounded-full px-8 h-12 text-base font-medium shadow-lg shadow-primary/25 transition-colors">
+                Start a Project <ArrowRight className="h-5 w-5" />
               </Link>
-              <Link href="/products">
-                <Button variant="outline" size="lg" className="border-white/20 hover:bg-white/10 hover:text-white rounded-full px-8 h-12 text-base backdrop-blur-sm">
-                  Explore Solutions
-                </Button>
+              <Link href="/products" className="inline-flex items-center justify-center gap-2 border border-white/20 hover:bg-white/10 hover:text-white rounded-full px-8 h-12 text-base font-medium backdrop-blur-sm transition-colors">
+                Explore Solutions
               </Link>
             </div>
           </motion.div>
