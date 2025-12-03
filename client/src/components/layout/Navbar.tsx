@@ -54,7 +54,7 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
-          {navLinks.map((link) => (
+          {navLinks.filter(link => link.href !== "/connect").map((link) => (
             <Link 
               key={link.href} 
               href={link.href}
@@ -69,6 +69,12 @@ export default function Navbar() {
               }`} />
             </Link>
           ))}
+          <Link 
+            href="/connect"
+            className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-all duration-300 hover:shadow-lg"
+          >
+            Connect
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -91,7 +97,7 @@ export default function Navbar() {
             className="md:hidden bg-white border-t border-gray-100 overflow-hidden"
           >
             <div className="flex flex-col p-4 gap-1">
-              {navLinks.map((link) => (
+              {navLinks.filter(link => link.href !== "/connect").map((link) => (
                 <Link 
                   key={link.href} 
                   href={link.href}
@@ -105,6 +111,13 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              <Link 
+                href="/connect"
+                className="bg-blue-600 hover:bg-blue-700 text-white text-base font-medium py-3 px-4 rounded-lg transition-colors text-center mt-2"
+                onClick={() => setIsOpen(false)}
+              >
+                Connect
+              </Link>
             </div>
           </motion.div>
         )}
