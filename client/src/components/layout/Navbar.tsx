@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@assets/generated_images/clean_v_icon_logo.png";
+import logo from "@assets/generated_images/modern_v_logo_blue_cyan_gradient.png";
 
 const navLinks = [
   { href: "/", label: "Home" },

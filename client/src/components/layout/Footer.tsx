@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { MapPin, Mail, Phone } from "lucide-react";
-import logo from "@assets/generated_images/clean_v_icon_logo.png";
+import logo from "@assets/generated_images/modern_v_logo_blue_cyan_gradient.png";
 
 export default function Footer() {
   return (
