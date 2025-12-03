@@ -100,14 +100,25 @@ export default function Products() {
         </div>
       </section>
 
-      {/* Verticals */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-main">
-          <div className="mb-10 md:mb-12">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-gray-900 mb-3">
-              Verticals We Cater To
-            </h2>
-            <p className="text-gray-600">Some of the verticals that we cater to are</p>
+      {/* Verticals - Blue Gradient Background */}
+      <section className="py-12 md:py-16 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl" />
+        
+        <div className="container-main relative z-10">
+          <div className="mb-10 md:mb-12 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="inline-block bg-white/10 text-cyan-400 font-semibold text-sm uppercase tracking-wider px-4 py-2 rounded-full mb-4">Industries</span>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-heading font-bold text-white mb-3">
+                Verticals We Cater To
+              </h2>
+              <p className="text-white/70">Some of the verticals that we cater to are</p>
+            </motion.div>
           </div>
           
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -118,12 +129,12 @@ export default function Products() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="bg-white rounded-xl p-4 md:p-6 text-center border border-gray-200 hover:border-blue-300 hover:shadow-md transition-all"
+                className="bg-white/5 backdrop-blur-sm rounded-xl p-4 md:p-6 text-center border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all"
               >
-                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-blue-50 flex items-center justify-center mx-auto mb-3 overflow-hidden border border-blue-100">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-blue-500/20 flex items-center justify-center mx-auto mb-3 overflow-hidden border border-blue-400/30">
                   <img src={ver.image} alt={ver.title} className="w-8 h-8 md:w-10 md:h-10 object-contain" />
                 </div>
-                <span className="font-medium text-gray-900 text-xs sm:text-sm">{ver.title}</span>
+                <span className="font-medium text-white text-xs sm:text-sm">{ver.title}</span>
               </motion.div>
             ))}
           </div>

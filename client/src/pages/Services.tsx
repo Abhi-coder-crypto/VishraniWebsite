@@ -1,29 +1,36 @@
 import Layout from "@/components/layout/Layout";
-import { Terminal, Database, Search, CheckCircle, ArrowRight, BarChart3, Zap, Lightbulb } from "lucide-react";
+import { CheckCircle, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import heroBg from "@assets/generated_images/professional_blue_tech_hero_background.png";
 import strategicIcon from "@assets/generated_images/strategic_it_consulting_icon.png";
 import integrationIcon from "@assets/generated_images/system_integration_icon.png";
 import analyticsIcon from "@assets/generated_images/performance_analytics_icon.png";
+import terminalIcon from "@assets/generated_images/terminal_code_icon.png";
+import searchIcon from "@assets/generated_images/search_analysis_icon.png";
+import databaseIcon from "@assets/generated_images/database_storage_icon.png";
+import discoveryIcon from "@assets/generated_images/discovery_search_icon.png";
+import chartIcon from "@assets/generated_images/analytics_chart_icon.png";
+import lightbulbIcon from "@assets/generated_images/strategy_lightbulb_icon.png";
+import lightningIcon from "@assets/generated_images/execution_lightning_icon.png";
 
 const services = [
   {
-    icon: Terminal,
+    image: terminalIcon,
     title: "Consultancy for Development Teams",
     description: "We provide consultancy to In-house software and database development teams. While your in-house team may be in the best position to know the user requirement, we provide a Third Person view on the overall process and provide inputs to enhance the system.",
     features: ["Code Review & Best Practices", "Architecture Validation", "Process Improvement", "Team Training"],
     gradient: "from-blue-500 to-blue-600"
   },
   {
-    icon: Search,
+    image: searchIcon,
     title: "System Analysis & Upgrade",
     description: "For those looking to implement new system or upgrade existing systems, we can analyse existing software/system and do gap analysis vis a vis the requirements in the modern environment.",
     features: ["Gap Analysis", "Modernization Strategy", "Migration Planning", "Risk Assessment"],
     gradient: "from-purple-500 to-purple-600"
   },
   {
-    icon: Database,
+    image: databaseIcon,
     title: "Database Performance",
     description: "We also provide database consultancy for enhancing the performance of existing systems. From schema optimization to query tuning, we ensure your data layer isn't the bottleneck.",
     features: ["Query Optimization", "Schema Design", "Performance Tuning", "Database Migration"],
@@ -82,9 +89,9 @@ export default function Services() {
                 {/* Top gradient bar */}
                 <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${service.gradient}`} />
                 
-                {/* Icon */}
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform`}>
-                  <service.icon className="w-6 h-6 text-white" />
+                {/* Image */}
+                <div className="w-12 h-12 rounded-xl overflow-hidden mb-4 shadow-lg group-hover:scale-110 transition-transform">
+                  <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
                 </div>
                 
                 <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
@@ -210,10 +217,10 @@ export default function Services() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { step: "01", title: "Discovery", desc: "Understand your needs and challenges", icon: Search },
-              { step: "02", title: "Analysis", desc: "Deep dive into your systems", icon: BarChart3 },
-              { step: "03", title: "Strategy", desc: "Create actionable roadmap", icon: Lightbulb },
-              { step: "04", title: "Execution", desc: "Implement and optimize", icon: Zap },
+              { step: "01", title: "Discovery", desc: "Understand your needs and challenges", image: discoveryIcon },
+              { step: "02", title: "Analysis", desc: "Deep dive into your systems", image: chartIcon },
+              { step: "03", title: "Strategy", desc: "Create actionable roadmap", image: lightbulbIcon },
+              { step: "04", title: "Execution", desc: "Implement and optimize", image: lightningIcon },
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -224,8 +231,8 @@ export default function Services() {
                 className="relative text-center group"
               >
                 <div className="relative inline-block mb-4">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                    <item.icon className="w-7 h-7 text-white" />
+                  <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg group-hover:scale-110 transition-transform">
+                    <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
                   </div>
                   <span className="absolute -top-2 -right-2 w-6 h-6 bg-blue-600 text-white text-xs font-bold rounded-full flex items-center justify-center">
                     {item.step}
