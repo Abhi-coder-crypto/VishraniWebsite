@@ -81,20 +81,24 @@ export default function KnowUs() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
-              className="hidden lg:block"
+              className="hidden lg:flex flex-col justify-center"
             >
-              <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-5">
                 {expertise.map((item, idx) => (
                   <motion.div
                     key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3 + idx * 0.1 }}
-                    className="bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all"
+                    className="flex items-center gap-4 group"
                   >
-                    <item.icon className="w-8 h-8 text-blue-600 mb-3" />
-                    <h3 className="text-gray-900 font-semibold mb-1">{item.title}</h3>
-                    <p className="text-gray-600 text-sm">{item.desc}</p>
+                    <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-cyan-500/20 transition-colors">
+                      <item.icon className="w-6 h-6 text-cyan-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-semibold">{item.title}</h3>
+                      <p className="text-white/60 text-sm">{item.desc}</p>
+                    </div>
                   </motion.div>
                 ))}
               </div>

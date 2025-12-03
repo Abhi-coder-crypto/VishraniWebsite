@@ -61,31 +61,32 @@ export default function Home() {
               </div>
             </motion.div>
             
-            {/* Stats Cards - Desktop */}
+            {/* Stats - Clean Counters */}
             <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="hidden lg:grid grid-cols-2 gap-4"
+              className="hidden lg:flex flex-col justify-center"
             >
-              {[
-                { icon: Users, number: "100+", label: "Clients Served", color: "cyan" },
-                { icon: Award, number: "20+", label: "Years Experience", color: "blue" },
-                { icon: Code, number: "50+", label: "Solutions Built", color: "purple" },
-                { icon: CheckCircle, number: "95%", label: "Client Retention", color: "green" },
-              ].map((stat, idx) => (
-                <motion.div 
-                  key={idx} 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 + idx * 0.1 }}
-                  className="bg-white rounded-xl p-5 text-center shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
-                >
-                  <stat.icon className={`w-8 h-8 mx-auto mb-3 ${stat.color === 'cyan' ? 'text-cyan-500' : stat.color === 'blue' ? 'text-blue-500' : stat.color === 'purple' ? 'text-purple-500' : 'text-green-500'}`} />
-                  <div className={`text-3xl font-bold mb-1 ${stat.color === 'cyan' ? 'text-cyan-600' : stat.color === 'blue' ? 'text-blue-600' : stat.color === 'purple' ? 'text-purple-600' : 'text-green-600'}`}>{stat.number}</div>
-                  <div className="text-xs text-gray-600">{stat.label}</div>
-                </motion.div>
-              ))}
+              <div className="space-y-6">
+                {[
+                  { number: "100+", label: "Clients Served", delay: 0.3 },
+                  { number: "25+", label: "Years of Excellence", delay: 0.4 },
+                  { number: "50+", label: "Solutions Delivered", delay: 0.5 },
+                  { number: "95%", label: "Client Retention Rate", delay: 0.6 },
+                ].map((stat, idx) => (
+                  <motion.div 
+                    key={idx}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: stat.delay }}
+                    className="flex items-center gap-4"
+                  >
+                    <span className="text-4xl md:text-5xl font-bold text-white">{stat.number}</span>
+                    <span className="text-white/70 text-sm uppercase tracking-wider">{stat.label}</span>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
           </div>
         </div>
@@ -93,18 +94,18 @@ export default function Home() {
       </section>
 
       {/* Stats - Mobile */}
-      <section className="lg:hidden bg-gray-50 py-10">
+      <section className="lg:hidden py-8 bg-gradient-to-r from-blue-900 to-cyan-900">
         <div className="container-main">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
             {[
-              { number: "100+", label: "Clients Served", color: "cyan" },
-              { number: "20+", label: "Years Experience", color: "blue" },
-              { number: "50+", label: "Solutions Built", color: "purple" },
-              { number: "95%", label: "Client Retention", color: "green" },
+              { number: "100+", label: "Clients" },
+              { number: "25+", label: "Years" },
+              { number: "50+", label: "Solutions" },
+              { number: "95%", label: "Retention" },
             ].map((stat, idx) => (
-              <div key={idx} className="text-center py-4 px-3 bg-white rounded-xl shadow-md">
-                <div className={`text-2xl font-bold mb-1 ${stat.color === 'cyan' ? 'text-cyan-600' : stat.color === 'blue' ? 'text-blue-600' : stat.color === 'purple' ? 'text-purple-600' : 'text-green-600'}`}>{stat.number}</div>
-                <div className="text-xs text-gray-600">{stat.label}</div>
+              <div key={idx} className="text-center">
+                <div className="text-2xl font-bold text-white">{stat.number}</div>
+                <div className="text-xs text-white/60 uppercase tracking-wider">{stat.label}</div>
               </div>
             ))}
           </div>
